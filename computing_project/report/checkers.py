@@ -10,7 +10,7 @@
 # this function check the length of a text
 # parameters data mean the text you want to check , length mean the length want to check
 # option is the type user want to check, done by given integer as argument
-# 1 means ==,2 mean > ,3  mean lower than 
+# 1 means ==,2 mean > ,3  mean lower than ,represeny by <
 def check_length(data, length, option=1):
     if option == 1:
         if len(data) == length:
