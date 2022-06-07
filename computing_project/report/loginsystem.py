@@ -14,6 +14,7 @@ def create_menu():
     root = Tk()
     root.title("main menu  ")
     root.geometry("700x500+400+150")
+    root.iconphoto(False, PhotoImage(file='car,icon.png'))
     frame_0=Frame(root)
     label1 = Label(frame_0, text="welcome to main menu ", font=("a,", 15))
     button1 = Button(frame_0,text="Exit", command=quit, bg="orange", font=("a,", 10), width=7)
@@ -44,6 +45,7 @@ def Login(root):
 
     root.destroy()
     root = Tk()
+    root.iconphoto(False, PhotoImage(file='car,icon.png'))
     root.title("login main menu ")
     root.geometry("700x500")
     frame_0=Frame(root,bd=10,relief="groove")
@@ -70,7 +72,7 @@ def signup(root):
     root = Tk()
     root.title("sign up  main menu ")
     root.geometry("700x600")
-
+    root.iconphoto(False, PhotoImage(file='car,icon.png'))
     frame_0=Frame(root,bd=10,relief="groove")
     label0 = Label(frame_0, text="sign up ",font=("Arial",15))
     label0.grid(row=0, column=1, pady=5)
