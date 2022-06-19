@@ -5,24 +5,26 @@ c = conn.cursor()
 def insert_emp(username,password):
     with conn:
         c.execute("INSERT INTO USERS VALUES (?,?)", (username,password))
-
+def check_repeadted_username(username):
+    c.execute(f"SELECT * FROM USERS WHERE username_field= {username}")
+    if c.fetchall()==True:
+        return True
+    else:
+         return False
 
 def check_exsistance(username,password):
-    c.execute(f"SELECT * FROM USERS WHERE username_field {username}")
+
+    c.execute(f"SELECT * FROM USERS WHERE username_field= {username} and password_field={password}  ")
     return c.fetchall()
 
 
-def update_pay(emp, pay):
+def update_password(username, password):
     with conn:
-        c.execute("""UPDATE employees SET pay = :pay
-                    WHERE first = :first AND last = :last""",
-                  {'first': emp.first, 'last': emp.last, 'pay': pay})
+        c.execute(f"UPDATE USERS SET password_field ={password} WHERE  username_field={username}")
 
 
-def remove_emp(emp):
+def remove_record(username):
     with conn:
-        c.execute("DELETE from employees WHERE first = :first AND last = :last",
-                  {'first': emp.first, 'last': emp.last})
+        c.execute(f"DELETE from USERS WHERE username_field={username}")
 
-check_exsistance(1,2)
-conn.close()
+
